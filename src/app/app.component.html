@@ -1,0 +1,12 @@
+<div *ngIf="userlogin">
+	<app-topnav></app-topnav>
+		<div class="container minheight">
+		   <router-outlet></router-outlet>
+		</div>
+	<app-footer></app-footer>
+</div>
+
+<div *ngIf="!userlogin">
+	<app-login></app-login>
+</div>
+

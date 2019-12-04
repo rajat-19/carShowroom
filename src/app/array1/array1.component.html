@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-4"> <h3> Total Item : {{item.length}} </h3></div>
+    <div class="col-md-4">
+        <i> Item Name </i>
+        <input type="text" class="form-control" #name>
+        <p> {{msg}} </p>
+    </div>
+    <div class="col-md-4"> 
+        <br>
+        <button class="btn btn-primary" (click)="save(name.value)">Save Item</button> 
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-group">
+            <li class="list-group-item active"> Product Category </li>
+            <li class="list-group-item" *ngFor="let y of category"> {{y}} </li>
+        </ul>
+        <!--start another url follow as above-->
+        
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-3 form-group" *ngFor="let x of item">
+                <p class="well"> {{x}} </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

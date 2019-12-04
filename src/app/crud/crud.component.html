@@ -1,0 +1,33 @@
+<div class="row form-group">
+	<div class="col-md-2"></div>
+	<div class="col-md-4"> 
+		<p class="text-center"> {{msg}} </p>
+		<input type="text" class="form-control" [(ngModel)]="bookname">
+	</div>
+	<div class="col-md-4"> 
+	    <br>
+		<button class="btn btn-primary" (click)="savebook()"> {{btntext}} </button>
+	</div>
+	<div class="col-md-2"></div>
+</div>
+<style>
+	.jumbotron{ padding:10px; }
+</style>
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-10">
+		<div class="row text-center">
+			<div class="col-md-4 form-group" *ngFor="let x of books; let i=index;">
+				<div class="jumbotron">
+					<p> {{x.name}} </p>
+					
+<button class="btn btn-danger btn-sm" (click)="delete(x.id)"> Delete </button> &nbsp;
+<button class="btn btn-info btn-sm" (click)="edit(x.id)"> Edit </button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-1"></div>
+</div>
+
+

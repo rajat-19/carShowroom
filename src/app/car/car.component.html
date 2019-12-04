@@ -1,0 +1,29 @@
+
+<style>
+	.car{ height:130px; width:100%; }
+</style>
+
+<div class="row">
+	<div class="col-md-9">
+		<h2 class="text-center"> Total Cars : {{carlist.length}} </h2>
+	</div>
+	<div class="col-md-3">
+		<label>Search here..</label>
+		<input type="text" [(ngModel)]="keyword" class="form-control">
+	</div>
+</div>
+<br><br>
+ <div class="row">
+	<div class="col-md-3 form-group" *ngFor="let car of carlist | paginate: { itemsPerPage: 4, currentPage: p } | filter:keyword">
+		<p> Car Model : {{car.model}} </p>
+		<p> Car Price : {{car.price}}</p>
+		<img src="http://cybotrix.com/ios/img/{{car.image}}" class="car">
+		<hr>
+	</div>
+ </div>
+ 
+<div class="row">
+	<div class="col-md-12 text-center">
+		<pagination-controls (pageChange)="p = $event"></pagination-controls>
+	</div>
+</div>

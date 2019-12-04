@@ -1,0 +1,61 @@
+<div class="text-center text-info"  *ngIf="!mycardata">
+	<p class="alert alert-info">
+		Please click on view more to see car information!
+	</p> 
+</div>
+
+
+<div *ngIf="mycardata.model">
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="text-center"> {{mycardata.model}} Information </h3>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-bordered">
+			<tbody>
+				<tr>
+					<th> Car Price </th>
+					<td> {{mycardata.price}} </td>
+				</tr>
+				<tr>
+					<th> Car Model </th>
+					<td> {{mycardata.model}} </td>
+				</tr>
+				<tr>
+					<th> Car Fuel </th>
+					<td> {{mycardata.fuelType}} </td>
+				</tr>
+				<tr>
+					<th> Car Mileage </th>
+					<td> {{mycardata.mileage}} </td>
+				</tr>
+				<tr>
+					<th> Car Category </th>
+					<td> {{mycardata.category.vechicleType}} </td>
+				</tr>
+			</tbody>
+		</table>
+		<img src="http://cybotrix.com/ios/img/{{mycardata.image}}" height="180" width="100%">
+		
+		<h4 class="text-center"> Service History </h4>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Sevice Data</th>
+					<th>Sevice Cost</th>
+				</tr>
+			</thead>
+			<tbody>
+			   <tr *ngFor="let service of mycardata.serviceHistory">
+				  <td>{{service.serviceDate}}</td>
+				  <td>{{service.serviceCost}}</td>
+			   </tr>
+			</tbody>
+		</table>
+		
+	</div>
+</div>
+</div>

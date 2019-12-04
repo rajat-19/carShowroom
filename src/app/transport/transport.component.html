@@ -1,0 +1,32 @@
+<h2 class="text-center text-danger">
+	Total Cars : {{mycar.length}}
+</h2>
+<style>
+   .car{ height:120px; width:100%; }
+</style>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="col-md-12 form-group">
+			<label>Search here...</label>
+<input type="text" class="form-control input-sm" [(ngModel)]="keyword">
+		</div>
+		
+<div class="col-md-6 form-group" *ngFor="let car of mycar | filter:keyword; let i=index;">
+		
+<img src="http://cybotrix.com/ios/img/{{car.image}}" class="car">
+	<br>
+	<p> <b>Price :</b> {{car.price}}</p>
+	<p> <b>Model:</b> {{car.model}}</p>
+<button class="btn btn-primary btn-block" (click)="getinfo(i)">View More ...</button>
+		</div> 
+	</div>
+	<div class="col-md-6">
+		<app-tdetails [mycardata]="cardata"></app-tdetails>
+	</div>
+</div>
+
+
+
+
+

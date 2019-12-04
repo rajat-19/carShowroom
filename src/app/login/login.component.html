@@ -1,0 +1,84 @@
+<br><br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4 bg-danger" *ngIf="blockstatus">
+			<h3 class="text-info text-center"> Login </h3>
+			<p class="text-center"> {{errormsg}}</p>
+			
+	<div class="form-group input-group">
+		<span class="input-group-addon">
+			<i class="glyphicon glyphicon-envelope"></i>
+		</span>
+<input type="text" class="form-control" 
+placeholder="Enter Email id" [(ngModel)]="email">
+	</div>
+	
+	<div class="form-group input-group">
+		<span class="input-group-addon">
+			<i class="glyphicon glyphicon-lock"></i>
+		</span>
+		<input type="password" class="form-control" 
+		placeholder="Enter Password" [(ngModel)]="pass">
+	</div>
+	
+<button class="btn btn-primary btn-block" (click)="gologin()">Login</button>
+		<hr>
+		<div class="text-center">
+<a href="javascript:void(0)" (click)="enableblock('new')"> I am new user </a>
+		</div>
+	<br>
+		</div> <!--login end-->
+		
+		
+		
+		<div class="col-md-4 bg-success"  *ngIf="!blockstatus">
+			<h3 class="text-info text-center"> Register </h3>
+
+	<div class="form-group input-group">
+		<span class="input-group-addon">
+			<i class="glyphicon glyphicon-user"></i>
+		</span>
+		<input type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="fname">
+	</div>
+	
+	<div class="form-group input-group">
+		<span class="input-group-addon">
+			<i class="glyphicon glyphicon-phone"></i>
+		</span>
+		<input type="text" class="form-control" placeholder="Enter Mobile No" [(ngModel)]="mobile">
+	</div>
+	
+	<div class="form-group input-group">
+		<span class="input-group-addon">
+			<i class="glyphicon glyphicon-envelope"></i>
+		</span>
+		<input type="text" class="form-control" placeholder="Enter Email id" [(ngModel)]="emailid">
+	</div>
+	
+	<div class="form-group input-group">
+		<span class="input-group-addon">
+			<i class="glyphicon glyphicon-lock"></i>
+		</span>
+		<input type="password" class="form-control" placeholder="Enter Password" [(ngModel)]="password">
+	</div>
+	
+	<div class="form-group input-group">
+		<span class="input-group-addon">
+			<i class="glyphicon glyphicon-map-marker"></i>
+		</span>
+		<textarea class="form-control" placeholder="Enter Address" [(ngModel)]="address"></textarea>
+	</div>
+	
+	<button class="btn btn-danger btn-block" (click)="register()">Register</button>
+		<hr>
+		<div class="text-center">
+<a href="javascript:void(0)" (click)="enableblock('old')"> I have account </a>
+		</div>
+	<br>
+		</div> <!--login end-->
+		
+		
+		<div class="col-md-4"></div>
+	</div>
+</div>

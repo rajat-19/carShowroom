@@ -1,0 +1,13 @@
+
+<div class="col-md-3">
+    <button class="btn btn-primary btn-sm btn-block" 
+    *ngFor="let x of item; let i=index;" (click)="getitem(i)">
+          {{x.cat}}
+    </button>
+</div>
+
+<div class="col-md-9">
+    <div class="col-md-4 form-group" *ngFor="let y of itemlist">
+            <p class="well"> {{y}}</p>
+    </div>
+</div>
